@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Task } from '../task';
 import { TodoService } from '../todo.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-todo-list',
@@ -19,8 +19,8 @@ export class TodoListComponent implements OnInit {
 
  createForm() {
    this.newTaskForm = this.formBuilder.group({
-     title: ['', [Validators.required]],
-     description: ['', [Validators.required]]
+     title: [''],
+     description: ['']
     });
   }
 
@@ -42,9 +42,11 @@ export class TodoListComponent implements OnInit {
     this.todoService.deleteTask(task);
   }
 
-  onSubmit(customerData: Task) {    
-    this.newTaskForm.reset();   
-    this.addTask(customerData);
+  onSubmit(customerData: Task) {
+    if (customerData.title !== null || customerData.description !== null) {
+      this.newTaskForm.reset();
+      this.addTask(customerData);
+    }
   }
 
 }
