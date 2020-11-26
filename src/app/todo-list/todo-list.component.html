@@ -2,12 +2,12 @@
 
   <form [formGroup]="newTaskForm" (ngSubmit)="onSubmit(newTaskForm.value)">
 
-    <input id="title" type="text" formControlName="title" placeholder="заголовок задачи" />
-    <input id="description" type="text" formControlName="description" placeholder="описание задачи">
+    <input id="title" type="text" formControlName="title" placeholder="title" />
+    <input id="description" type="text" formControlName="description" placeholder="text">
 
     <button class="button" type="submit">
       <span>+</span>
-      Добавить задачу
+     Add
     </button>
 
   </form>
