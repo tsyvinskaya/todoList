@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Task } from '../task';
 import { TodoService } from '../todo.service';
-import { FormBuilder, FormGroup} from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-todo-list',
@@ -47,6 +48,10 @@ export class TodoListComponent implements OnInit {
       this.newTaskForm.reset();
       this.addTask(customerData);
     }
+  }
+
+  drop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.tasks, event.previousIndex, event.currentIndex);
   }
 
 }
