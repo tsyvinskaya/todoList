@@ -7,6 +7,6 @@
     "\\src\\assets",
     "\\src\\environments"
   ],
-  "SelectedNode": "\\src\\index.html",
+  "SelectedNode": "\\src\\app\\todo-list\\todo-list.component.html",
   "PreviewInSolutionExplorer": false
 }
